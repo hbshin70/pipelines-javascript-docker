@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hbshinpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hbshinpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: hbshinpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: hbshinpipelinesjavascriptdocker 
+          image: user12acr.azurecr.io/hbshinpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
